@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DA77031E-88DA-42BE-820A-65CEA968533E}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>CompanyORM</RootNamespace>
+    <AssemblyName>CompanyORM</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ORM\Dao\Database.cs" />
+    <Compile Include="ORM\Dao\ShowGeodet.cs" />
+    <Compile Include="ORM\Dao\ShowHistorieZakazek.cs" />
+    <Compile Include="ORM\Dao\ShowLokalita.cs" />
+    <Compile Include="ORM\Dao\ShowMesto.cs" />
+    <Compile Include="ORM\Dao\ShowObjednavatel.cs" />
+    <Compile Include="ORM\Dao\ShowTypZakazek.cs" />
+    <Compile Include="ORM\Dao\ShowZakazka.cs" />
+    <Compile Include="ORM\Forms\Aktualni_zakazky.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ORM\Forms\Aktualni_zakazky.Designer.cs">
+      <DependentUpon>Aktualni_zakazky.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ORM\Forms\Aktuální_geodeti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ORM\Forms\Aktuální_geodeti.Designer.cs">
+      <DependentUpon>Aktuální_geodeti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ORM\Forms\Detail_His_Zakazky.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ORM\Forms\Detail_His_Zakazky.Designer.cs">
+      <DependentUpon>Detail_His_Zakazky.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ORM\Forms\Historie_zakazek_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ORM\Forms\Historie_zakazek_Form.Designer.cs">
+      <DependentUpon>Historie_zakazek_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ORM\Forms\Insert_His_Zaznam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ORM\Forms\Insert_His_Zaznam.Designer.cs">
+      <DependentUpon>Insert_His_Zaznam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ORM\Forms\Menu_Programu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ORM\Forms\Menu_Programu.Designer.cs">
+      <DependentUpon>Menu_Programu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ORM\Geodet.cs" />
+    <Compile Include="ORM\Historie_zakazek.cs" />
+    <Compile Include="ORM\Lokalita.cs" />
+    <Compile Include="ORM\Mesto.cs" />
+    <Compile Include="ORM\Objednavatel.cs" />
+    <Compile Include="ORM\Program.cs" />
+    <Compile Include="ORM\Typ_zakazky.cs" />
+    <Compile Include="ORM\Zakazka.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ORM\Forms\Aktualni_zakazky.resx">
+      <DependentUpon>Aktualni_zakazky.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ORM\Forms\Aktuální_geodeti.resx">
+      <DependentUpon>Aktuální_geodeti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ORM\Forms\Detail_His_Zakazky.resx">
+      <DependentUpon>Detail_His_Zakazky.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ORM\Forms\Historie_zakazek_Form.resx">
+      <DependentUpon>Historie_zakazek_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ORM\Forms\Insert_His_Zaznam.resx">
+      <DependentUpon>Insert_His_Zaznam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ORM\Forms\Menu_Programu.resx">
+      <DependentUpon>Menu_Programu.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
